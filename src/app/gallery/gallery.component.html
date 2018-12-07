@@ -1,0 +1,60 @@
+<div class="container" id="gallery" style="margin-top: 50PX;" >
+    <app-navigationbar></app-navigationbar>
+      <h5>GALLERY</h5>
+      <div class="row">
+        <div class="col-md-4">
+      </div>
+      </div>
+        <div class="row"  style="margin-top: 50PX;">
+          <div class="col-sm-10">
+            <h5>MORE IMAGES</h5>
+
+
+            <div class="row">
+          <div class="col-sm-3"  *ngFor="let galle of imagecollection | paginate: { itemsPerPage: 10, currentPage: p , totalItems:totalcount  } ; let galleryi = index;let i=index">
+
+
+           <img src={{galle.thumbnailimg}}  id="#sandy"   (click)="getImges(galle.title)"  class="gallimg">
+</div>
+
+            </div>
+                <pagination-controls (pageChange) = "p = $event" (pageChange) = "pagiantinGallery($event)"></pagination-controls>
+          </div>
+          <div  class="col-sm-2">
+              <h5>HOT POSTS</h5>
+              <div *ngFor="let galle of hotpost ">
+                  <img src={{galle.image}} width="220px" height="170px"   data-toggle="modal" data-target="#myModal" >
+                  <p><strong>{{galle.heading}}</strong></p>
+                </div>
+                <button type="button" class="btn btn-primary" [routerLink] = "['/content']" >More</button>
+          </div>
+      </div>
+</div>
+
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog model-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" *ngFor="let g of hotpost">
+        <h4 class="modal-title">{{g.heading}}</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" *ngFor="let g of hotpost">
+        <img src="{{g.image}}" height="300px" width="670px" >
+       <p>{{g.para}}</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

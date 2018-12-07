@@ -1,0 +1,39 @@
+td
+{
+font-family: advent-pro;
+font-size: 15px;
+font-weight: 600;
+}
+h5 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  color: #4698d5;
+  line-height: 17px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  }
+
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  color: #4698d5;
+  line-height: 17px;
+  margin-bottom: 30px;
+
+  }
+#imag1{
+border-radius: 20px;
+}
+.modal-content
+{
+width: 700px;
+margin-left: -100px;
+}
+p{
+font-family: advent-pro;
+font-size: 14px;
+line-height: 28px;
+color: #0065B3;
+text-align: justify;
+margin-top: 20px;
+}

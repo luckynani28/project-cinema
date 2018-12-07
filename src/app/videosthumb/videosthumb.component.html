@@ -1,0 +1,14 @@
+<div class="container-fluid" style="margin-top: 50PX;">
+    <h5>VIDEOS</h5>
+    <div class="row"  *ngFor="let item of collection1">
+      <div class="col-sm-12">
+          <div class="embed-responsive embed-responsive-16by9">
+              <iframe  class="e2e-iframe-trusted-src embed-responsive-item"  [src]="sanitizer.bypassSecurityTrustResourceUrl(item.videourl)" allowfullscreen="allowfullscreen" width="250px" height="150px"></iframe>
+            </div>
+           <h6>{{item.title}}</h6>
+      </div>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" [routerLink] = "['/videos']" >More</button>
+
+

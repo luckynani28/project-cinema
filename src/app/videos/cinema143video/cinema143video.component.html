@@ -1,0 +1,10 @@
+<h5>CINEMA143 VIDEOS</h5>
+<ngx-slick class="carousel" #slickModel="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem  class="slide"  *ngFor="let vi of imagecollection">
+      <!-- <h3>{{p.ProductName}}</h3> -->
+      <!-- <img src="{{p.image}}" > -->
+      <iframe  class="e2e-iframe-trusted-src"  [src]="sanitizer.bypassSecurityTrustResourceUrl(vi.videourl)" allowfullscreen="allowfullscreen" scrolling="no"></iframe>
+      <!-- <h5>{{"price" + ":" +"  " + p.Price}}</h5> -->
+    </div>
+
+  </ngx-slick>

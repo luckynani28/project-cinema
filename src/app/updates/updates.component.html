@@ -1,0 +1,72 @@
+
+<div class="container-fluid" id="updates" style="margin-top: 50PX;" >
+  <app-navigationbar></app-navigationbar>
+
+    <div class="row">
+      <div class="col-md-8">
+
+        </div>
+    </div>
+      <div class="row" >
+          <div  class="col-sm-3">
+            <div id="adverting">
+              <app-PromoAdvert></app-PromoAdvert>
+            </div>
+          </div>
+          <!-- <div class="col-sm-1"></div> -->
+        <div class="col-sm-9">
+          <h5>UPDATES</h5>
+          <div class="row">
+
+            <div class="col-sm-3"  *ngFor="let galle of imagecollection | paginate: { itemsPerPage: 10, currentPage: p , totalItems:totalcount  } ; let galleryi = index">
+
+                <img src={{galle.thumbnail}} id="gallimg"   (click)="getimage(galle.title)" data-toggle="modal" data-target="#myModal" id="imag1" class="responsive">
+                <h6>{{galle.title}}</h6>
+              </div>
+            </div>
+              <pagination-controls (pageChange) = "p = $event" (pageChange) = "pagiantinGallery($event)"></pagination-controls>
+        </div>
+
+        <!-- <div  class="col-sm-2">
+            <h5>HOT POSTS</h5>
+            <div *ngFor="let galle of hotpost ">
+                <img src={{galle.image}} width="220px" height="170px">
+                <p><strong>{{galle.heading}}</strong></p>
+              </div>
+
+        </div> -->
+
+
+      </div>
+
+
+
+</div>
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog model-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header" *ngFor="let g of kvl">
+          <h4 class="modal-title">{{g.title}}</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" *ngFor="let g of kvl">
+          <img src="{{g.thumbnail}}" height="300px" width="670px" >
+         <p>{{g.body}}</p>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,45 @@
+
+<div class="container" >
+    <app-navigationbar></app-navigationbar>
+  <div class="row" *ngFor="let s of objdata" style="margin-top: 200px;">
+    <div class="col-sm-3" *ngFor="let s1 of s.images ; let i=index">
+      <img src="{{s1}}" class="responsive" id="gallimg" (click)="checking();" (click)="getcount(s.images.length);"  (click)="nextchecking();" data-toggle="modal" data-target="#myModal">
+  </div>
+  </div>
+</div>
+
+
+<!-- for model -->
+
+
+<div class="modal" id="myModal" >
+  <div class="modal-dialog model-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <!-- <div class="modal-header" *ngFor="let s of objdata">
+        <h4 class="modal-title">{{g.title}}</h4>
+        <button type="button" class="close"  data-dismiss="modal" (click)="refresh()">&times;</button>
+      </div> -->
+
+      <!-- Modal body -->
+      <div class="modal-body" *ngFor="let s of objdata">
+       <img src="{{ s.images[i]}}" id=imag1 (click)="getcount(s.images.length);">
+       <h6>{{s.images.length}} images</h6>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" id="previous" (click)="previous()" [disabled]="check">previous</button>
+
+          <button type="button" class="btn btn-primary" id="next" (click)="next()" [disabled]="checknext">next</button>
+
+        <button type="button" class="btn btn-danger" id="close" (click)="refresh()" data-dismiss="modal">Close</button>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

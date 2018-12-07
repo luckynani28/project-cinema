@@ -1,0 +1,101 @@
+<div class="container-fluid" >
+<div class="row">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white" id="main-nav" style="margin-top: 30px;">
+    <div class="fixed-top" id="lang">
+        <button class="btn  btn-sm btn-outline-secondary"  ng-class="{'active': isActive}" id="eng" (click)="setLanguage('English');">ENGLISH</button>
+        <button class="btn  btn-sm btn-outline-secondary" (click)="setLanguage('Telugu');">తెలుగు</button>
+    </div>
+<a href="#HOME">
+  <img src="https://www.cinema143.com/sites/default/files/cinema143_logo.jpg" height="90" alt="Kivar Technologies"></a>
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mainnavbar">
+           <span >
+               <i class="fa fa-bars" aria-hidden="true"></i>
+           </span>
+       </button>
+     </div>
+ <div class="collapse navbar-collapse" id="mainnavbar">
+   <ul class="navbar-nav " >
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngFor="let s of navmovies">
+      {{s.movies[0]}}</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngFor="let  s of navmovies  let i=index" >
+        <div *ngFor="let s1 of s.movies.slice(1)">
+            <a class="dropdown-item" href="#{{navstring}}" (click)="getnav(s1)" >{{s1}}</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngFor="let s of navshortfilms">
+        {{s.movies[0]}}</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngFor="let s of navshortfilms">
+          <div *ngFor="let s1 of s.movies.slice(1)">
+              <a class="dropdown-item" href="#">{{s1}}</a>
+          </div>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngFor="let s of navoldmovies">
+      {{s.movies[0]}}</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngFor="let s of navoldmovies">
+        <div *ngFor="let s1 of s.movies.slice(1)">
+            <a class="dropdown-item" href="#">{{s1}}</a>
+        </div>
+      </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngFor="let s of navfilmschool">
+    {{s.movies[0]}}</a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngFor="let s of navfilmschool">
+      <div *ngFor="let s1 of s.movies.slice(1)">
+          <a class="dropdown-item" href="#">{{s1}}</a>
+      </div>
+    </div>
+</li>
+    <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngFor="let s of navcollection">
+        {{s.movies[0]}}</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngFor="let s of navcollection">
+          <div *ngFor="let s1 of s.movies.slice(1)">
+              <a class="dropdown-item" href="#">{{s1}}</a>
+          </div>
+        </div>
+    </li> -->
+    <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngFor="let s of navcollection">
+        {{s.movies[0]}}</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngFor="let s of navcollection">
+          <div *ngFor="let s1 of s.movies.slice(1)">
+              <a class="dropdown-item" href="#">{{s1}}</a>
+          </div>
+        </div>
+    </li> -->
+ <!-- <li class="nav-item">
+      <a class="nav-link" href="#">short films</a>
+    </li> -->
+   </ul>
+ </div>
+</nav>
+<hr>
+
+
+
+  <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{navfilmschool}}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">{{SCRIPTLESSONS}}</a>
+        <a class="dropdown-item" href="#">{{SCRIPTANALYSIS}}</a>
+        <a class="dropdown-item" href="#">{{DIRECTORSSUCCESS}}</a>
+        <a class="dropdown-item" href="#">{{ELEMENTS}}</a>
+        <a class="dropdown-item" href="#">{{OTHERMOVIEELEMENTS}}</a>
+      </div>
+    </li> -->
+
